@@ -1,0 +1,182 @@
+/* Media queries responsive para las imágenes ------------------ */
+
+@media (max-width: 768px) {
+  .foto {
+    flex: 1 1 calc(50% - 1em);
+  }
+}
+
+@media (max-width: 480px) {
+  .foto {
+    flex: 1 1 100%;
+  }
+}
+/* ------------------------------------------- */
+
+body {
+  font-family: Arial, sans-serif;
+  background: #ce8989;
+}
+
+#contenedor {
+  background: #fcfcfc;
+  width: 80%;
+  max-width: 1440px;
+  padding: 2em;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+  'header'
+  'main'
+  'footer'
+  ;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  
+}
+
+header {
+  background-image: url(../img/fond.jpg);
+  text-align: center;
+  padding: 0.2em;
+  margin: 1em;
+  grid-area: header;
+}
+
+main{
+  grid-area: main;
+}
+
+section {
+  background: #ffffff;
+  padding: 1em;
+  margin: 1em;
+}
+
+.cards {
+  display: flex;
+  gap: 1em;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: solid 2px #ce89890a;
+}
+.tarjeta:hover {
+  border: solid 2px #ce8989;
+}
+.descripcion {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.precio {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.enlace {
+  background: #ce8989;
+  padding: 2px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+/* Footer............................................................... */
+
+footer {
+  background: #ce8989;
+  color: #000000;
+  text-align: center;
+  padding: 0.2em;
+  margin: 1em;
+  height: 2em;
+  grid-area: footer;
+}
+
+
+/* NAV............................................................... */
+nav {
+  background-color: #ce8989;
+  margin: 1em 1em 1em 1em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.derecha {
+  cursor: pointer;
+  margin-left: auto;
+}
+
+li {
+  display: inline-block;
+  line-height: 30px;
+  background-color: #ce8989;
+  padding: 1em;
+}
+
+nav ul li a {
+  padding: 7px 22px;
+  color: #000000;
+  /* Color del texto */
+  text-decoration: none;
+}
+
+nav ul li:hover {
+  background-color: #ca6e6e;
+  /* Color de fondo al pasar el cursor */
+  color: #a075c4;
+  /* Color del texto al pasar el cursor */
+}
+
+/* NAV............................................................... */
+
+.subtitulo {
+  text-align: center;
+}
+
+.elegidos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1em; /* Espacio entre imágenes */
+}
+
+.foto {
+  flex: 1 1 calc(25% - 1em); /* 4 imágenes por fila con espacio */
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+/* sección nosotros */
+
+.Nosotros {
+  display: flex;
+}
+
+.imagen {
+  border: solid 2px #ce89890a;
+  display: flex;
+}
+
+.texto {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  padding: 60px 80px;
+  background-color: #ce898970;
+}
