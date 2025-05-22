@@ -11,7 +11,7 @@
     flex: 1 1 100%;
   }
 }
-/* ------------------------------------------- */
+/* INDEX-BODY------------------------------------------ */
 
 body {
   font-family: Arial, sans-serif;
@@ -87,6 +87,24 @@ section {
   text-decoration: none;
 }
 
+.subtitulo {
+  text-align: center;
+}
+
+.elegidos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1em; /* Espacio entre imágenes */
+}
+
+.foto {
+  flex: 1 1 calc(25% - 1em); /* 4 imágenes por fila con espacio */
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
 /* Footer............................................................... */
 
 footer {
@@ -140,24 +158,6 @@ nav ul li:hover {
 }
 
 /* NAV............................................................... */
-
-.subtitulo {
-  text-align: center;
-}
-
-.elegidos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1em; /* Espacio entre imágenes */
-}
-
-.foto {
-  flex: 1 1 calc(25% - 1em); /* 4 imágenes por fila con espacio */
-  height: auto;
-  max-width: 100%;
-  object-fit: cover;
-}
 /* sección Nosotros------------------------------ */
 
 .Nosotros {
@@ -227,3 +227,4 @@ input {
 .boton_enviar {
   text-align: center;
 }
+/*  PRODUCTOS------------------------------- */
