@@ -228,3 +228,13 @@ input {
   text-align: center;
 }
 /*  PRODUCTOS------------------------------- */
+
+/* COMPRAS-------------------------------- */
+.como_comprar {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  line-height: 1.2;
+  padding: 60px 80px;
+  background-color: #ce898970;
+}
