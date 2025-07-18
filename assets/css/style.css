@@ -71,6 +71,10 @@ nav ul li:hover {
   margin-left: auto;
 }
 
+.abrir-menu,
+.cerrar-menu {
+  display: none;
+}
 /* MAIN------------------------------------- */
 main {
   grid-area: main;
@@ -78,12 +82,6 @@ main {
 .subtitulo {
   text-align: center;
 }
-
-/* section {
-  background: #ffffff;
-  padding: 1em;
-  margin: 1em;
-} */
 
 .cards {
   display: flex;
@@ -125,14 +123,7 @@ main {
   border-radius: 4px;
 }
 
-/* .elegidos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1em; /* Espacio entre imágenes}  */
-
 .foto-producto {
-  /*flex: 1 1 calc(25% - 1em); 4 imágenes por fila con espacio */
   height: auto;
   width: 100%;
   object-fit: cover;
@@ -147,7 +138,7 @@ footer {
   text-align: center;
   padding: 0.5em;
   margin: 1em;
-  /*  height: 2em; */
+
   grid-area: footer;
 }
 
@@ -158,16 +149,65 @@ footer {
     width: 100%;
   }
   #contenedor {
-    padding: 1em;
+    padding: 0.5em;
+    width: 100vw;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .cards {
+    gap: 0.5em;
   }
   .enlace {
     width: 100%;
     box-sizing: border-box;
   }
+  .derecha {
+    margin: auto;
+  }
+  /* --MENU HAMBUEGUESA-- */
+  /* QUEDA PENDIENTE ACOMODAR LOS ITEMS CUANDO SE DESPLIEGA EL MENU. 
+  TIENEN LA DISPOSICION ANTERIOR, CON EL ESPACIO DESPUES DEL INICIO.
+  VER SI NO CONVIENE TAMBIEN HACER ESTE MENU PARA DISP. MEDIANOS */
+  .abrir-menu,
+  .cerrar-menu {
+    display: block;
+    border: 0;
+    font-size: 1.25rem;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .abrir-menu {
+    float: right;
+  }
+  .nav {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1rem;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ca6e6e7a;
+    padding: 2rem;
+  }
+  .nav.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  #nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
 }
-
 /* DISPOSITIVOS MEDIANOS */
 @media (max-width: 768px) {
+  .derecha {
+    margin: auto;
+  }
   .tarjeta {
     width: 48%;
   }
