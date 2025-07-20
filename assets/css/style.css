@@ -29,7 +29,16 @@ header {
   margin: 1em;
   grid-area: header;
 }
-
+.logo {
+  max-width: 15rem;
+  margin-top: 1rem;
+}
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+}
 nav {
   background-color: #ce8989;
   margin: 1em;
@@ -75,6 +84,7 @@ nav ul li:hover {
 .cerrar-menu {
   display: none;
 }
+
 /* MAIN------------------------------------- */
 main {
   grid-area: main;
@@ -145,8 +155,9 @@ footer {
 /* MEDIA QUERIES----------------------- */
 /* DISPOSITIVOS PEQUEÑOS */
 @media (max-width: 480px) {
-  .tarjeta {
-    width: 100%;
+  body {
+    width: 100vw;
+    overflow: hidden;
   }
   #contenedor {
     padding: 0.5em;
@@ -154,6 +165,25 @@ footer {
     min-width: 0;
     box-sizing: border-box;
   }
+  header {
+    margin: 0.5em 0;
+    padding: 0;
+  }
+  .logo {
+    max-width: 8rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .header-top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+  }
+  .tarjeta {
+    width: 100%;
+  }
+
   .cards {
     gap: 0.5em;
   }
@@ -176,9 +206,7 @@ footer {
     background-color: transparent;
     cursor: pointer;
   }
-  .abrir-menu {
-    float: right;
-  }
+
   .nav {
     opacity: 0;
     visibility: hidden;
@@ -203,25 +231,76 @@ footer {
     align-items: end;
   }
 }
+/* DISPOSITIVOS ENTRE 481 Y 768------(quedaba raro) */
+.abrir-menu,
+.cerrar-menu {
+  display: block;
+  border: 0;
+  font-size: 2rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+.nav {
+  opacity: 0; /* ----------> PARA QUE DESAPAREZCA LA NAV*/
+  visibility: hidden; /* ---> PARA QUE DESAPAREZCA LA NAV*/
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 1rem;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ca6e6e7a;
+  padding: 2rem;
+}
+.nav.visible {
+  opacity: 1;
+  visibility: visible;
+}
+#nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
 /* DISPOSITIVOS MEDIANOS */
 @media (max-width: 768px) {
+  #contenedor {
+    width: 100vh;
+    padding: 0.7em;
+  }
+  .logo {
+    max-width: 10rem;
+  }
+  .header-top {
+    padding: 0 1em;
+  }
+  .abrir-menu,
+  .cerrar-menu {
+    display: block;
+  }
   .derecha {
     margin: auto;
   }
+  .cards {
+    gap: 0.7em;
+  }
   .tarjeta {
-    width: 48%;
+    width: 100%;
+    min-width: 0;
   }
   nav {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
   }
   ul {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
   }
   li {
     width: 100%;
-    text-align: center;
+    text-align: left;
   }
   .foto-producto {
     height: auto;
@@ -229,9 +308,29 @@ footer {
 }
 /* DISPOSITIVOS GRANDES */
 @media (max-width: 1024px) {
+  #contenedor {
+    width: 96vw;
+    padding: 1em;
+  }
+  .logo {
+    max-width: 12rem;
+  }
+  .header-top {
+    padding: 0 2em;
+  }
   .tarjeta {
     width: 45%;
   }
+}
+/* SECCION PRODUCTOS------USA LA CONFIG LOS PRODUCTOS DEL INDEX----------------------------- */
+/* SECCION COMO COMPRAR------------------------------- */
+.como_comprar {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  line-height: 1.2;
+  padding: 60px 80px;
+  background-color: #ce898970;
 }
 
 /* --------------------Sección Nosotros------------------------------ */
@@ -303,4 +402,3 @@ input {
 .boton_enviar {
   text-align: center;
 }
-/*  PRODUCTOS------------------------------- */
