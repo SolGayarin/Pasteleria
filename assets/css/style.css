@@ -1,26 +1,15 @@
-/* Media queries responsive para las imágenes ------------------ */
-
-@media (max-width: 768px) {
-  .foto {
-    flex: 1 1 calc(50% - 1em);
-  }
-}
-
-@media (max-width: 480px) {
-  .foto {
-    flex: 1 1 100%;
-  }
-}
-/* INDEX-BODY------------------------------------------ */
+/* GENERAL------------------------------------------ */
 
 body {
   font-family: Arial, sans-serif;
   background: #ce8989;
+  margin: 0;
+  padding: 0;
 }
 
 #contenedor {
   background: #fcfcfc;
-  width: 80%;
+  width: 90%;
   max-width: 1440px;
   padding: 2em;
   margin: 0 auto;
@@ -32,7 +21,7 @@ body {
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
 }
-
+/* HEADER Y NAV---------------------------- */
 header {
   background-image: url(../img/fond.jpg);
   text-align: center;
@@ -40,100 +29,29 @@ header {
   margin: 1em;
   grid-area: header;
 }
-
-main {
-  grid-area: main;
+.logo {
+  max-width: 15rem;
+  margin-top: 1rem;
 }
-
-section {
-  background: #ffffff;
-  padding: 1em;
-  margin: 1em;
-}
-
-.cards {
+.header-top {
   display: flex;
-  gap: 1em;
-  width: 100%;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.tarjeta {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  border: solid 2px #ce89890a;
-}
-.tarjeta:hover {
-  border: solid 2px #ce8989;
-}
-.descripcion {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
-.precio {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  font-weight: bold;
-}
-
-.enlace {
-  background: #ce8989;
-  padding: 2px 20px;
-  color: white;
-  text-decoration: none;
-}
-
-.subtitulo {
-  text-align: center;
-}
-
-.elegidos {
-  display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
-  gap: 1em; /* Espacio entre imágenes */
+  padding: 0 1em;
 }
-
-.foto {
-  flex: 1 1 calc(25% - 1em); /* 4 imágenes por fila con espacio */
-  height: auto;
-  max-width: 100%;
-  object-fit: cover;
-}
-
-/* Footer............................................................... */
-
-footer {
-  background: #ce8989;
-  color: #000000;
-  text-align: center;
-  padding: 0.2em;
-  margin: 1em;
-  height: 2em;
-  grid-area: footer;
-}
-
-/* NAV............................................................... */
 nav {
   background-color: #ce8989;
-  margin: 1em 1em 1em 1em;
+  margin: 1em;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-.derecha {
-  cursor: pointer;
-  margin-left: auto;
+  display: flex;
 }
 
 li {
@@ -157,8 +75,265 @@ nav ul li:hover {
   /* Color del texto al pasar el cursor */
 }
 
-/* NAV............................................................... */
-/* sección Nosotros------------------------------ */
+.derecha {
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.abrir-menu,
+.cerrar-menu {
+  display: none;
+}
+
+/* MAIN------------------------------------- */
+main {
+  grid-area: main;
+}
+.subtitulo {
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  gap: 1em;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: solid 2px #ce89890a;
+  width: 23%;
+  min-width: 200px;
+  padding: 1em;
+  box-sizing: border-box;
+}
+.tarjeta:hover {
+  border: solid 2px #ce8989;
+}
+.descripcion,
+.precio {
+  text-align: center;
+  margin: 0.5em 0;
+}
+.precio {
+  font-weight: bold;
+}
+
+.enlace {
+  background: #ce8989;
+  padding: 5px 20px;
+  color: white;
+  text-decoration: none;
+  margin-top: 0, 5em;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.foto-producto {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Footer............................................................... */
+
+footer {
+  background: #ce8989;
+  color: #000000;
+  text-align: center;
+  padding: 0.5em;
+  margin: 1em;
+
+  grid-area: footer;
+}
+
+/* MEDIA QUERIES----------------------- */
+/* DISPOSITIVOS PEQUEÑOS */
+@media (max-width: 480px) {
+  body {
+    width: 100vw;
+    overflow: hidden;
+  }
+  #contenedor {
+    padding: 0.5em;
+    width: 100vw;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  header {
+    margin: 0.5em 0;
+    padding: 0;
+  }
+  .logo {
+    max-width: 8rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .header-top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+  }
+  .tarjeta {
+    width: 100%;
+  }
+
+  .cards {
+    gap: 0.5em;
+  }
+  .enlace {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .derecha {
+    margin: auto;
+  }
+  /* --MENU HAMBUEGUESA-- */
+  /* QUEDA PENDIENTE ACOMODAR LOS ITEMS CUANDO SE DESPLIEGA EL MENU. 
+  TIENEN LA DISPOSICION ANTERIOR, CON EL ESPACIO DESPUES DEL INICIO.
+  VER SI NO CONVIENE TAMBIEN HACER ESTE MENU PARA DISP. MEDIANOS */
+  .abrir-menu,
+  .cerrar-menu {
+    display: block;
+    border: 0;
+    font-size: 1.25rem;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .nav {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1rem;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ca6e6e7a;
+    padding: 2rem;
+  }
+  .nav.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  #nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+}
+/* DISPOSITIVOS ENTRE 481 Y 768------(quedaba raro) */
+.abrir-menu,
+.cerrar-menu {
+  display: block;
+  border: 0;
+  font-size: 2rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+.nav {
+  opacity: 0; /* ----------> PARA QUE DESAPAREZCA LA NAV*/
+  visibility: hidden; /* ---> PARA QUE DESAPAREZCA LA NAV*/
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 1rem;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ca6e6e7a;
+  padding: 2rem;
+}
+.nav.visible {
+  opacity: 1;
+  visibility: visible;
+}
+#nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+/* DISPOSITIVOS MEDIANOS */
+@media (max-width: 768px) {
+  #contenedor {
+    width: 100vh;
+    padding: 0.7em;
+  }
+  .logo {
+    max-width: 10rem;
+  }
+  .header-top {
+    padding: 0 1em;
+  }
+  .abrir-menu,
+  .cerrar-menu {
+    display: block;
+  }
+  .derecha {
+    margin: auto;
+  }
+  .cards {
+    gap: 0.7em;
+  }
+  .tarjeta {
+    width: 100%;
+    min-width: 0;
+  }
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  li {
+    width: 100%;
+    text-align: left;
+  }
+  .foto-producto {
+    height: auto;
+  }
+}
+/* DISPOSITIVOS GRANDES */
+@media (max-width: 1024px) {
+  #contenedor {
+    width: 96vw;
+    padding: 1em;
+  }
+  .logo {
+    max-width: 12rem;
+  }
+  .header-top {
+    padding: 0 2em;
+  }
+  .tarjeta {
+    width: 45%;
+  }
+}
+/* SECCION PRODUCTOS------USA LA CONFIG LOS PRODUCTOS DEL INDEX----------------------------- */
+/* SECCION COMO COMPRAR------------------------------- */
+.como_comprar {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  line-height: 1.2;
+  padding: 60px 80px;
+  background-color: #ce898970;
+}
+
+/* --------------------Sección Nosotros------------------------------ */
 
 .Nosotros {
   display: flex;
@@ -227,4 +402,3 @@ input {
 .boton_enviar {
   text-align: center;
 }
-/*  PRODUCTOS------------------------------- */
