@@ -148,7 +148,6 @@ footer {
   text-align: center;
   padding: 0.5em;
   margin: 1em;
-
   grid-area: footer;
 }
 
@@ -194,75 +193,9 @@ footer {
   .derecha {
     margin: auto;
   }
-  /* --MENU HAMBUEGUESA-- */
-  /* QUEDA PENDIENTE ACOMODAR LOS ITEMS CUANDO SE DESPLIEGA EL MENU. 
-  TIENEN LA DISPOSICION ANTERIOR, CON EL ESPACIO DESPUES DEL INICIO.
-  VER SI NO CONVIENE TAMBIEN HACER ESTE MENU PARA DISP. MEDIANOS */
-  .abrir-menu,
-  .cerrar-menu {
-    display: block;
-    border: 0;
-    font-size: 1.25rem;
-    background-color: transparent;
-    cursor: pointer;
-  }
 
-  .nav {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    gap: 1rem;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ca6e6e7a;
-    padding: 2rem;
-  }
-  .nav.visible {
-    opacity: 1;
-    visibility: visible;
-  }
-  #nav-list {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-  }
 }
-/* DISPOSITIVOS ENTRE 481 Y 768------(quedaba raro) */
-.abrir-menu,
-.cerrar-menu {
-  display: block;
-  border: 0;
-  font-size: 2rem;
-  background-color: transparent;
-  cursor: pointer;
-}
-.nav {
-  opacity: 0; /* ----------> PARA QUE DESAPAREZCA LA NAV*/
-  visibility: hidden; /* ---> PARA QUE DESAPAREZCA LA NAV*/
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  gap: 1rem;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ca6e6e7a;
-  padding: 2rem;
-}
-.nav.visible {
-  opacity: 1;
-  visibility: visible;
-}
-#nav-list {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-}
+
 
 /* DISPOSITIVOS MEDIANOS */
 @media (max-width: 768px) {
@@ -290,22 +223,115 @@ footer {
     width: 100%;
     min-width: 0;
   }
-  nav {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  ul {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  li {
-    width: 100%;
-    text-align: left;
-  }
   .foto-producto {
     height: auto;
   }
+  
+  
 }
+
+/* TAMANos PARA AGREGAR EL MENÚ HAMBURGUESA */
+
+@media (max-width: 945px) {
+  .abrir-menu,
+  .cerrar-menu {
+    display: block;
+  }
+
+  .nav {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.6rem;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ce8989;
+    padding: 4rem 1.5rem 1.5rem;
+    width: 220px;
+    box-shadow: -4px 0 8px rgba(0,0,0,0.1);
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Transición al mostrar/ocultar */
+    z-index: 1000;
+    border-radius: 4px;
+  }
+
+  .nav.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+  }
+
+    #nav-list li {
+    width: 100%;
+    margin-bottom: 0.4rem;
+    padding: 0;
+  }
+
+   #nav-list li a {
+    font-size: 1.1rem;
+    padding: 0.6rem 0.5rem;
+    text-align: center;
+    width: 100%;
+    display: block;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    color: #181717; 
+    background-color: rgba(255, 255, 255, 0.2); 
+  }
+
+
+  .cerrar-menu {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #181717;
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.abrir-menu {
+  background-color: rgba(206, 137, 137, 0.95);
+  color: #eeeeee;
+  border: 2px solid rgba(245, 245, 245, 0.95);
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.abrir-menu:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.05);
+}
+
+}
+
+
 /* DISPOSITIVOS GRANDES */
 @media (max-width: 1024px) {
   #contenedor {
