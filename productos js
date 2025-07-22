@@ -1,0 +1,92 @@
+const productos = [
+  {
+    id: 1,
+    nombre: "Marquise de frutos rojos",
+    precio: 40000,
+  },
+  {
+    id: 2,
+    nombre: "Tarta de limón",
+    precio: 35000,
+  },
+  {
+    id: 3,
+    nombre: "Tarta de coco ",
+    precio: 38000,
+  },
+  {
+    id: 4,
+    nombre: "Torta de chocolate",
+    precio: 38500,
+  },
+  {
+    id: 5,
+    nombre: "Marquise clásica",
+    precio: 49500,
+  },
+  {
+    id: 6,
+    nombre: "Torta de frutos rojos",
+    precio: 43000,
+  },
+  {
+    id: 7,
+    nombre: "Tarta de frutas",
+    precio: 35000,
+  },
+  {
+    id: 8,
+    nombre: "Cheescake de caramelo y nueces",
+    precio: 37000,
+  },
+];
+
+if (document.title.includes("Productos")) {
+  const contenedor = document.getElementById("contenedor-productos");
+
+  const mostrarProductos = () => {
+    productos.forEach((producto) => {
+      contenedor.innerHTML += `
+            <div class="tarjeta">
+            <div class= "descripcion">${producto.nombre}</div>
+            <div class= "precio">$${producto.precio}</div>
+            <div><a class= "enlace agregar-carrito" href="#" data-id="${producto.id}">Agregar</a></div>
+            </div>
+            `;
+    });
+  };
+  mostrarProductos();
+}
+
+if (document.title.includes("Productos")) {
+  contenedor.addEventListener("click", (e) => {
+    e.preventDefault();
+    const idProducto = parseInt(e.target.getAttribute("data-id"));
+    const productoSeleccionado = productos.find((p) => p.id === idProducto);
+    agregarAlCarrito(productoSeleccionado);
+  });
+}
+
+const agregarAlCarrito = () => {
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const contenedorCarrito = document.getElementById("carrito-contenedor");
+
+  if (carrito.length === 0) {
+    contenedorCarrito.innerHTML = "<p> El carrito está vacío.</p>";
+  } else {
+    contenedorCarrito.innerHTML = carrito
+      .map(
+        (producto, index) => `
+        <p>${index + 1}. ${producto.nombre} - $${producto.precio}</p>
+        `
+      )
+      .join("");
+  }
+};
+if (document.title.includes("productos")) {
+  actualizarCarrito();
+}
+
+localStorage.setItem("carrito", JSON.stringify(carrito));
+alert(`${producto.nombre} fue agregado al carrito.`);
+
